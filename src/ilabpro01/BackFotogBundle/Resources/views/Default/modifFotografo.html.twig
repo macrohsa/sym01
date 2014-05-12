@@ -1,0 +1,286 @@
+
+{% block stylesheets %}
+
+<script type="text/javascript" src="{{ asset('bundles/ilabpro01general/js/jquery-2.1.0.js') }}"></script>
+
+<link href="{{ asset('bundles/ilabpro01backfotog/css/base_general.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/ilabpro01backfotog/css/formularios.css') }}" rel="stylesheet" type="text/css" />
+{#
+<script type="text/javascript" src="{{asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script type="text/javascript" src="{{ path('fos_js_routing_js',{"callback": "fos.Router.setData"}) }}"></script>
+#}
+{% endblock %}
+
+
+
+{% block cuerpo %}
+
+<div id="encabezado">
+    <div id="contenedor_encabezado">
+        <div id="contenedor_nav_registro">
+        
+        </div>
+        <div id="contenedor_logo_menu">
+        
+        </div>
+    
+    </div>
+
+</div>
+
+        <div id="cuerpo" >
+            <div id="contenedor_cuerpo">
+                 <form action="{{ path('modif_fotografo', { 'id' : id } ) }}" method="post" {{ form_enctype(form) }}>
+                <div class="main_formulario">
+                    <div class="box_leyenda_completar_datos">
+                        <div class="box_titulo_secundario">
+                
+                    <h2 id="titulo" >Modificación Datos Fotógrafo</h2> 
+                    </div>
+                    <p>
+                        
+                    </p>
+                    <div class="box_input_informacion_personal">
+                   
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.nombre) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.nombre, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.nombre) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.apellido) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.apellido, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.apellido) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.email) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.email, { 'attr': {'readonly': 'true', 'class': 'textbox'} }) }}
+                                {{ form_errors(form.email) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.usuario) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.usuario, { 'attr': {'readonly': 'true', 'class': 'textbox'} }) }}
+                                {{ form_errors(form.usuario) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.contrasenia) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.contrasenia, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.contrasenia) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.telefono) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.telefono, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.telefono) }}
+                            </div>
+                        </div>
+                        
+                        <div class="agrupa_inputs_dato_personal">
+                            
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.pais) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.pais) }}
+                                {{ form_errors(form.pais) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.provincia) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.provincia) }}
+                                {{ form_errors(form.provincia) }}
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.ciudad) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.ciudad) }}
+                                {{ form_errors(form.ciudad) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.estudio) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.estudio, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.estudio) }}
+                            </div>
+                        </div>
+                        
+                                                
+                          <div class="agrupa_inputs_dato_personal">
+                            
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.calleEstudio) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.calleEstudio, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.calleEstudio) }}
+                            </div>
+                        </div>
+                       
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.numeroEstudio) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.numeroEstudio, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.numeroEstudio) }}
+                            </div>
+                        </div>
+                        </div>  
+                            
+
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.telefonoEstudio) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.telefonoEstudio, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.telefonoEstudio) }}
+                            </div>
+                        </div>
+                        
+
+                       <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.planFotografo) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.planFotografo) }}
+                                {{ form_errors(form.planFotografo) }}
+                            </div>
+                        </div> 
+
+                        
+                        
+                            
+
+                        {{ form_rest(form) }}
+
+                                           
+        
+                        <div class="box_botonera">
+		
+		
+                            <div class="boton_anterior">
+                                    <input class="boton" type="button" name="cancelar" value="Cancelar" onclick="document.location='{{ path('back_fotog', { 'id' : id } ) }}'; return false;">
+                            </div>
+                            <div class="boton_siguiente">
+                                    <input class="boton" type="submit" name="aceptar" value="Aceptar" >
+                            </div>
+		
+
+                        </div>
+                </div>
+            </div>
+                            
+                        </div>
+                    </form>
+           </div>
+        </div>
+    {% endblock %}
+ 
+
+
+{% block javascripts %}
+    <script>
+        $(function(){
+            $("#nombre_pais").change(function(){
+                var data = {
+                    country_id: $(this).val()
+                };
+
+                $.ajax({
+                    type: 'post',
+                    url: '{{ path("select_provinces") }}',
+                    data: data,
+                    success: function(data) {
+                        var $province_selector = $('#nombre_provincia');
+                        $province_selector.html('<option>Provincia</option>');
+                        for (var i=0, total = data.length; i < total; i++) {
+                            $province_selector.append('<option value="' + data[i].id + '">' + data[i].nombre + '</option>');
+                        }
+                        $('#nombre_ciudad').html("<option>Ciudad</option>");
+                    }
+                });
+            });
+
+            $("#nombre_provincia").change(function(){
+                var data = {
+                    province_id: $(this).val()
+                };
+
+                $.ajax({
+                    type: 'post',
+                    url: '{{ path("select_cities") }}',
+                    data: data,
+                    success: function(data) {
+                        var $city_selector = $('#nombre_ciudad');
+
+                        $city_selector.html('<option>Ciudad</option>');
+
+                        for (var i=0, total = data.length; i < total; i++) {
+                            $city_selector.append('<option value="' + data[i].id + '">' + data[i].nombre + '</option>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
+

@@ -1,0 +1,133 @@
+
+#cuerpo {
+    font-family: 'Sans Normal Italic', Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: black;
+    font-style: italic;
+}
+
+
+.main_formulario {
+    background-color: #F7F7F7;
+    border: 1px solid #CDCECF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 2px #CDCECF;
+    padding: 40px 0;
+}
+
+.box_leyenda_completar_datos, .box_input_informacion_personal, #tablaFacturacion .box_titulo_secundario, .box_factura_check, .main_formulario .box_titulo_terciario, .main_formulario .box_email {
+    margin: 0 auto;
+    width: 80%;
+    overflow: hidden;
+}
+
+.main_formulario .box_titulo_secundario h2 {
+    color: #5E6A7F;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.box_leyenda_completar_datos p {
+    color: #5E6A7F;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.box_input_informacion_personal, .box_input_factura, .main_formulario .box_titulo_terciario, .main_formulario .box_email {
+    width: 690px;
+    padding: 15px 0;
+}
+
+.label_informacion_personal, .main_formulario .datoobligado, .label_data_factura, .main_formulario .datocelda {
+    color: #B3B3B3;
+    display: block;
+    font-size: 16px;
+    padding-bottom: 1%;
+    padding-top: 2%;
+    padding-left: 0.5%;
+}
+
+.box_input {
+    padding-left: 0.5%;
+}
+
+.label_informacion_personal span, .label_data_factura span {
+    color: #AE0303;
+}
+
+.textbox {
+    border: 1px solid #B7B7B7;
+    border-radius: 5px 5px 5px 5px;
+    color: #6F6F6F;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+    width: 40%;
+}
+
+.textbox_large {
+    width: 40%;
+}
+
+.combo {
+    border: 1px solid #B7B7B7;
+    border-radius: 5px 5px 5px 5px;
+    color: #6F6F6F;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+}
+
+div.box_botonera {
+    padding: 2% 0;
+}
+
+.box_botonera {
+    overflow: hidden;
+    clear: both;
+}
+
+div.box_botonera .boton {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 8px 13px;
+}
+.boton {
+    background: #F1ED90;
+    padding: 5px 10px;
+    border-radius: 5px 5px 5px 5px;
+    display: block;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+
+div.box_botonera > div.boton_anterior {
+    float: left;
+    padding-left: 100px;
+}
+
+div.box_botonera > div.boton_anterior {
+    margin-right: 100px;
+}
+
+div.box_botonera > div.boton_siguiente {
+    padding-right: 10%;
+}
+
+div.box_botonera > div.boton_siguiente, div.box_botonera > div.boton_confirmar {
+    float: right;
+}
+
+.agrupa_inputs_dato_personal {
+    overflow: hidden;
+    margin: 2% 0;
+}
+
+.agrupa_inputs_dato_personal > div {
+    float: left;
+    margin-right: 10px;
+    padding: 2px;
+}
+

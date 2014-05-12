@@ -1,0 +1,40 @@
+
+
+<h2>Listado de Planes de Fotografos</h2>
+<table border="1" class="tabla1" >
+    <tr>
+        <th>ID</th>
+        <th>Código Plan</th>
+        <th>Nombre</th>
+        <th>Días Vigencia</th>
+        <th>Disponible</th>
+        <th></th>
+    </tr>
+    {% for plan in planes %}
+    <tr>
+        <td>{{ plan.id }}</td>
+        <td>{{ plan.codigoPlan }}</td>
+        <td>{{ plan.nombre }}</td>
+        <td>{{ plan.diasVigencia }}</td>
+        <td>
+            {% if plan.disponible == 1 %}
+                Sí
+            {% else %}
+                No
+            {% endif %}
+        </td>
+        <td>
+            <a href="{{ path('modificar_plan', { 'id' : plan.id } ) }}">
+            <button class="boton" type="button" formaction="" >Modificar</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br>
+<a href="{{ path('alta_plan') }}">
+    <button class="boton" type="button" formaction="" >Agregar Plan</button>
+</a>
+<a href="{{ path('ilabpro01_back_admin_homepage') }}">
+    <button class="boton" type="button" formaction="" >Volver Home Admin</button>
+</a>

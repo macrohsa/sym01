@@ -1,0 +1,7 @@
+parameters:
+#    ilabpro01_back_admin.example.class: ilabpro01\BackAdminBundle\Example
+
+services:
+#    ilabpro01_back_admin.example:
+#        class: %ilabpro01_back_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

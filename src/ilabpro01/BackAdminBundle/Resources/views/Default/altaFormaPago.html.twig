@@ -1,0 +1,107 @@
+
+{% block stylesheets %}
+
+<script type="text/javascript" src="{{ asset('bundles/ilabpro01general/js/jquery-2.1.0.js') }}"></script>
+
+<link href="{{ asset('bundles/ilabpro01backfotog/css/base_general.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/ilabpro01backfotog/css/formularios.css') }}" rel="stylesheet" type="text/css" />
+
+{# 
+<script type="text/javascript" src="{{asset('bundles/fosjsrouting/js/router.js') }}"></script>
+ 
+<script type="text/javascript" src="{{ path('fos_js_routing_js',{"callback": "fos.Router.setData"}) }}"></script>
+#}
+
+{% endblock %}
+
+{% block cuerpo %}
+
+<div id="encabezado">
+    <div id="contenedor_encabezado">
+        <div id="contenedor_nav_registro">
+        
+        </div>
+        <div id="contenedor_logo_menu">
+        
+        </div>
+    
+    </div>
+
+</div>
+
+        <div id="cuerpo" >
+            <div id="contenedor_cuerpo">
+                 <form action="{{ path('alta_formapago') }}" method="post" {{ form_enctype(form) }}>
+                     
+                     {{ form_errors(form) }}
+                     
+                <div class="main_formulario">
+                    <div class="box_leyenda_completar_datos">
+                        <div class="box_titulo_secundario">
+                
+                    <h2 id="titulo" >Alta Forma Pago Fotógrafo</h2> 
+                    </div>
+                    <p>
+                        
+                    </p>
+                    <div class="box_input_informacion_personal">
+                   
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.codigoFormaPago) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.codigoFormaPago, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.codigoFormaPago) }}
+                            </div>
+                        </div>
+                        
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.nombre) }}
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.nombre, { 'attr': {'class': 'textbox'} }) }}
+                                {{ form_errors(form.nombre) }}
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 {{ form_label(form.disponible) }}
+                            </label>
+                            <div class="box_input input_nombre">
+                                {{ form_widget(form.disponible) }}
+                                {{ form_errors(form.disponible) }}
+                            </div>
+                        </div>
+                        
+                        
+                            
+                        {{ form_rest(form) }}
+                                           
+        
+                        <div class="box_botonera">
+		
+		
+                            <div class="boton_anterior">
+                                    <input class="boton" type="button" name="cancelar" value="Cancelar" onclick="document.location='{{ path('lista_formaspago') }}'; return false;">
+                            </div>
+                            <div class="boton_siguiente">
+                                    <input class="boton" type="submit" name="aceptar" value="Aceptar" >
+                            </div>
+		
+
+                        </div>
+                </div>
+            </div>
+                            
+                        </div>
+                    </form>
+           </div>
+        </div>
+    {% endblock %}

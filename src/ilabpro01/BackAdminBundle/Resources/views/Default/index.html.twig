@@ -1,0 +1,33 @@
+
+{% extends "::baseFotografo.html.twig" %}
+
+{% block stylesheets %}
+
+<link href="{{ asset('/Project01/web/bundles/ilabpro01backfotog/css/login.css') }}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block cabecera %}{% endblock %}
+
+{% block cuerpo %}
+
+
+<h2>Hello BackAdmin!!!</h2>
+<br><br>
+
+<a href="{{ path('lista_fotografos') }}">
+    <button class="boton" type="button" formaction="" >Lista Fotografos</button>
+</a>
+
+
+<a href="{{ path('lista_planes') }}">
+    <button class="boton" type="button" formaction="" >Lista Planes</button>
+</a>
+
+
+<a href="{{ path('lista_formaspago') }}">
+    <button class="boton" type="button" formaction="" >Lista Formas Pago</button>
+</a>
+
+
+{% endblock %}

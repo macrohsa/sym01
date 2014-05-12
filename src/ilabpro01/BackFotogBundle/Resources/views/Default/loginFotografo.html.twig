@@ -1,0 +1,59 @@
+
+
+{% extends "::baseFotografo.html.twig" %}
+
+{% block stylesheets %}
+
+<link href="{{ asset('/Project01/web/bundles/ilabpro01backfotog/css/login.css') }}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block cabecera %}{% endblock %}
+
+{% block cuerpo %}
+
+        
+     <div id="superior">
+         
+     </div>
+        
+        <div id="contenedor">
+            <form id="form1" name="form1" action="{{ path('login_fotografo') }}" method="get">
+                <div class="fila">
+                    <span class="etiqueta">
+                         <label for="usuario">Usuario</label>
+                    </span>
+                    <span class="form-el">
+                        <input id="usuario" name="usuario" type="text" required="true" autocomplete="off" maxlength="20"/>
+                    </span>
+                </div>
+                <div class="fila">
+                    <span class="etiqueta">
+                         <label for="contrasenia">Contraseña</label>
+                    </span>
+                    <span class="form-el">
+                        <input id="contrasenia" name="contrasenia" type="password" required="true" maxlength="20" />
+                    </span>
+                </div>
+                <div class="fila">
+                    <span class="form-el">
+                        <button class="boton" type="submit" >Ingresar</button>
+                    </span>
+                </div>
+                <div class="fila">
+                    <span class="form-el">
+                        <a href="{{ path('alta_fotografo') }}">
+                            <button class="boton" type="button" formaction="" >Registrarse</button>
+                        </a>
+                        
+                    </span>
+                </div>
+
+                </form>
+      </div>
+
+
+
+
+{% endblock %}
+

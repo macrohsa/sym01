@@ -1,0 +1,39 @@
+ilabpro01_back_admin_homepage:
+    pattern:  /hello
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:index }
+
+
+lista_fotografos:
+    pattern:  /fotografos
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:listaFotografos }
+
+
+lista_planes:
+    pattern:  /planes
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:listaPlanes }
+
+
+alta_plan:
+    pattern:  /altaplan
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:altaPlanFotografo }
+
+
+modificar_plan:
+    pattern:  /modifplan
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:modificarPlanFotografo }
+
+
+lista_formaspago:
+    pattern:  /formaspago
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:listaFormasPago }
+
+
+alta_formapago:
+    pattern:  /altafpago
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:altaFPagoFotografo }
+
+
+modificar_formapago:
+    pattern:  /modiffpago
+    defaults: { _controller: ilabpro01BackAdminBundle:Admin:modificarFPagoFotografo }
+

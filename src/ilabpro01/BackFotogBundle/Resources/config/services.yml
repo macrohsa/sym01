@@ -1,0 +1,7 @@
+parameters:
+#    ilabpro01_back_fotog.example.class: ilabpro01\BackFotogBundle\Example
+
+services:
+#    ilabpro01_back_fotog.example:
+#        class: %ilabpro01_back_fotog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

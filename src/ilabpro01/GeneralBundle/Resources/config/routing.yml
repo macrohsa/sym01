@@ -1,0 +1,3 @@
+ilabpro01_general_homepage:
+    pattern:  /hello
+    defaults: { _controller: ilabpro01GeneralBundle:General:index }

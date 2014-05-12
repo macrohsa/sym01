@@ -1,0 +1,29 @@
+
+
+<h2>Listado de Fotografos</h2>
+<table border="1" class="tabla1" >
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>email</th>
+        <th>usuario</th>
+        <th>Fecha Alta</th>
+        <th>Plan</th>
+        <th>Fecha Inicio Plan</th>
+    </tr>
+    {% for fotografo in fotografos %}
+    <tr>
+        <td>{{ fotografo.nombre }}</td>
+        <td>{{ fotografo.apellido }}</td>
+        <td>{{ fotografo.email }}</td>
+        <td>{{ fotografo.usuario }}</td>
+        <td>{{ fotografo.fechaAlta|date("d/m/Y") }}</td>
+        <td>{{ fotografo.planFotografo }}</td>
+        <td>{{ fotografo.fechaInicioPlan is empty ? "" : fotografo.fechaInicioPlan|date("d/m/Y") }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br>
+<a href="{{ path('ilabpro01_back_admin_homepage') }}">
+    <button class="boton" type="button" formaction="" >Volver Home Admin</button>
+</a>

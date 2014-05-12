@@ -1,0 +1,38 @@
+
+
+<h2>Listado Formas Pago Fotógrafos</h2>
+<table border="1" class="tabla1" >
+    <tr>
+        <th>ID</th>
+        <th>Código Forma Pago</th>
+        <th>Nombre</th>
+        <th>Disponible</th>
+        <th></th>
+    </tr>
+    {% for formaPago in formasPago %}
+    <tr>
+        <td>{{ formaPago.id }}</td>
+        <td>{{ formaPago.codigoFormaPago }}</td>
+        <td>{{ formaPago.nombre }}</td>
+        <td>
+            {% if formaPago.disponible == 1 %}
+                Sí
+            {% else %}
+                No
+            {% endif %}
+        </td>
+        <td>
+            <a href="{{ path('modificar_formapago', { 'id' : formaPago.id } ) }}">
+            <button class="boton" type="button" formaction="" >Modificar</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br>
+<a href="{{ path('alta_formapago') }}">
+    <button class="boton" type="button" formaction="" >Agregar Forma Pago</button>
+</a>
+<a href="{{ path('ilabpro01_back_admin_homepage') }}">
+    <button class="boton" type="button" formaction="" >Volver Home Admin</button>
+</a>

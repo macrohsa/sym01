@@ -1,0 +1,51 @@
+
+{% extends "::baseFotografo.html.twig" %}
+
+{% block stylesheets %}
+<script type="text/javascript" src="{{ asset('bundles/ilabpro01backfotog/js/jquery-2.0.3.js') }}"></script>
+
+<link href="{{ asset('bundles/ilabpro01backfotog/css/base_general.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/ilabpro01backfotog/css/formularios.css') }}" rel="stylesheet" type="text/css" />
+{#
+<script type="text/javascript" src="{{asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script type="text/javascript" src="{{ path('fos_js_routing_js',{"callback": "fos.Router.setData"}) }}"></script>
+#}
+{% endblock %}
+
+{% block cuerpo %}
+
+<div id="encabezado">
+    <div id="contenedor_encabezado">
+        <div id="contenedor_nav_registro">
+        </div>
+        <div id="contenedor_logo_menu">
+            
+        </div>
+    </div>
+</div>
+
+<div>
+    
+    <h2>Fotógrafo ingresado con éxito</h2>
+    <br>
+    <br>
+    <h4>Sitio Fotógrafo</h4>
+    <div class="boton_anterior">
+        <a href="{{ path('modif_fotografo', { 'id' : id }) }}"><input type="button" value="Modificar datos" ></a>
+    </div>
+    
+    {% if planvigente == false %}
+        <div class="boton_anterior">
+            <a href="{{ path('pagoplan_fotografo', { 'id' : id }) }}"><input type="button" value="Pagar Plan" ></a>
+        </div>
+    {% endif %}
+    <div class="boton_anterior">
+        <input class="boton" type="button" name="salir" value="Salir" onclick="document.location='{{ path('ilabpro01_back_fotog_homepage') }}'; return false;">
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,34 @@
+ilabpro01_back_fotog_homepage:
+    pattern:  /hello
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:index }
+
+alta_fotografo:
+    pattern:  /altafotog
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:nuevoFotografo }
+
+modif_fotografo:
+    pattern:  /modiffotog
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:modificarFotografo }
+
+back_fotog:
+    pattern:  /backfotog
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:backFotografo }
+
+login_fotografo:
+    pattern:  /loginfotog
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:buscarUsuarioFotografo }
+
+select_provinces:
+    pattern:  /provinces
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:provinces }
+
+select_cities:
+    pattern:  /cities
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:cities }
+
+pagoplan_fotografo:
+    pattern:  /pagoplan
+    defaults: { _controller: ilabpro01BackFotogBundle:Fotografo:pagoPlanFotografo }
+
+
+
