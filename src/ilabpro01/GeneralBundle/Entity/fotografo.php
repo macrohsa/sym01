@@ -467,7 +467,7 @@ class fotografo {
      */
     public function setFormaPago(\ilabpro01\GeneralBundle\Entity\formaPagoFotografo $formaPago = null)
     {
-        $this->formaPagoFotografo = $formaPago;
+        $this->formaPago = $formaPago;
     
         return $this;
     }

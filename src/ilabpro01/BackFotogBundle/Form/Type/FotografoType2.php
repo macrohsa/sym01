@@ -4,17 +4,16 @@ namespace ilabpro01\BackFotogBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Doctrine\ORM\EntityRepository;
 use ilabpro01\GeneralBundle\Form\EventListener\AddCityFieldSubscriber;
 use ilabpro01\GeneralBundle\Form\EventListener\AddProvinceFieldSubscriber;
 use ilabpro01\GeneralBundle\Form\EventListener\AddCountryFieldSubscriber;
 
 /*
- * Para altaFotografo
- * muestra combo Plan y contraseña como campo password
+ * Cuando el fotógrafo tiene un plan vigente
+ * No se muestra combo para entidad Plan, se agrega en modifFotografo como cuadro de texto readonly
  */
 
-class FotografoType extends AbstractType
+class FotografoType2 extends AbstractType
 {
     
     public function buildForm(FormBuilderInterface $generador, array $opciones){
@@ -39,7 +38,7 @@ class FotografoType extends AbstractType
             'label' =>'Usuario ',
             'max_length' =>30,
         ));
-        $generador->add('contrasenia','password', array(
+        $generador->add('contrasenia','text', array(
             'label' =>'Contraseña ',
             'max_length' =>30,
         ));
@@ -64,16 +63,6 @@ class FotografoType extends AbstractType
             'label' =>'Teléfono Estudio',
             'max_length' =>50,
             'required' =>false,
-        ));
-         $generador->add('planFotografo','entity', array(
-            'label' =>'Plan',
-            'empty_value'   => 'Plan',
-            'class' => 'ilabpro01\GeneralBundle\Entity\planFotografo',
-            'required' =>true,
-             'query_builder' => function(EntityRepository $er){
-             return $er->createQueryBuilder('p')
-                     ->where('p.disponible = 1');
-             }
         ));
         $generador
                 ->addEventSubscriber(new AddCountryFieldSubscriber($propertyPathToCity))

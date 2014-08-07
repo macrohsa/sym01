@@ -93,7 +93,9 @@
                                 <span>*</span>
                             </label>
                             <div class="box_input input_nombre">
-                                {{ form_widget(form.contrasenia, { 'attr': {'class': 'textbox'} }) }}
+                                
+                               
+                                {{ form_widget(form.contrasenia, { 'attr': {'class': 'textbox'}  }) }}
                                 {{ form_errors(form.contrasenia) }}
                             </div>
                         </div>
@@ -194,7 +196,7 @@
                             </div>
                         </div>
                         
-
+                        {% if planvigente == false %}
                        <div class="item_input_dato_personal">
                             <label class="label_informacion_personal">
                                  {{ form_label(form.planFotografo) }}
@@ -205,9 +207,17 @@
                                 {{ form_errors(form.planFotografo) }}
                             </div>
                         </div> 
-
-                        
-                        
+                        {% else %}
+                         <div class="item_input_dato_personal">
+                            <label class="label_informacion_personal">
+                                 <label>Plan fotografo</label>
+                                <span>*</span>
+                            </label>
+                            <div class="box_input input_nombre">
+                                <input id="planFotografo" name="planFotografo" required="false"  type="text" readonly="true" value=" {{ (fotog.planFotografo) }}" />
+                            </div>
+                        </div> 
+                        {% endif %}
                             
 
                         {{ form_rest(form) }}

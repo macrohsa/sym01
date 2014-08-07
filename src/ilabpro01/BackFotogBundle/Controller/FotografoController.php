@@ -18,9 +18,9 @@ class FotografoController extends Controller
     {
         return $this->render('ilabpro01BackFotogBundle:Default:loginFotografo.html.twig');
     }
-    
 
-   
+
+
     /*
      * Comprueba usuario y contraseña para Login
      */
@@ -100,6 +100,7 @@ class FotografoController extends Controller
             ));
     }
 
+    
     /*
      * Almacenar datos fotografo existente
      */
@@ -114,7 +115,13 @@ class FotografoController extends Controller
         
         $fotog = $em->getRepository('ilabpro01GeneralBundle:fotografo')->find($id);
         
-        $form = $this->createForm(new \ilabpro01\BackFotogBundle\Form\Type\FotografoType(), $fotog);
+        if ($planVigente){
+            $form = $this->createForm(new \ilabpro01\BackFotogBundle\Form\Type\FotografoType2(), $fotog);
+        }
+        else{
+            $form = $this->createForm(new \ilabpro01\BackFotogBundle\Form\Type\FotografoType1(), $fotog);
+        }
+        
         
           if ($this->getRequest()->getMethod() == 'POST') {
             
@@ -134,6 +141,8 @@ class FotografoController extends Controller
         return $this->render('ilabpro01BackFotogBundle:Default:modifFotografo.html.twig', array(
             'form' => $form->createView(),
             'id' => $id,
+            'planvigente' => $planVigente,
+            'fotog' => $fotog,
                 ));
         
     }
@@ -236,29 +245,28 @@ class FotografoController extends Controller
     /*
      * Almacenar datos del plan de un fotografo existente
      */
-    public function pagoPlanFotografoAction(){
+    public function pagoPlanFotografoAction(Request $request){
         
 
         $id = $_GET["id"];
         
+        $hoy = new DateTime('NOW');
         
         $em = $this->getDoctrine()->getEntityManager();
         
         $fotog = $em->getRepository('ilabpro01GeneralBundle:fotografo')->find($id);
         
         $form = $this->createForm(new \ilabpro01\BackFotogBundle\Form\Type\FormaPagoFotografoType(), $fotog);
-
+        
         
           if ($this->getRequest()->getMethod() == 'POST') {
             
             $form->bindRequest($this->getRequest());
             
             if ($form->isValid()) {
-                
+                              
                 $fotog->setFechaInicioPlan($hoy);
-                
-                $planVigente = $this-> obtenerVigencia($id);                
-
+              
                 $em->flush();
 
                 return $this->render('ilabpro01BackFotogBundle:Default:backFotografo.html.twig', array(

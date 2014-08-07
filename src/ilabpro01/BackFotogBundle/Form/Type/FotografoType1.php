@@ -10,11 +10,11 @@ use ilabpro01\GeneralBundle\Form\EventListener\AddProvinceFieldSubscriber;
 use ilabpro01\GeneralBundle\Form\EventListener\AddCountryFieldSubscriber;
 
 /*
- * Para altaFotografo
- * muestra combo Plan y contraseña como campo password
+ * Cuando el fotografo no tiene plan vigente
+ * muestra combo para entidad Plan en modifFotografo
  */
 
-class FotografoType extends AbstractType
+class FotografoType1 extends AbstractType
 {
     
     public function buildForm(FormBuilderInterface $generador, array $opciones){
@@ -39,7 +39,7 @@ class FotografoType extends AbstractType
             'label' =>'Usuario ',
             'max_length' =>30,
         ));
-        $generador->add('contrasenia','password', array(
+        $generador->add('contrasenia','text', array(
             'label' =>'Contraseña ',
             'max_length' =>30,
         ));
@@ -69,7 +69,7 @@ class FotografoType extends AbstractType
             'label' =>'Plan',
             'empty_value'   => 'Plan',
             'class' => 'ilabpro01\GeneralBundle\Entity\planFotografo',
-            'required' =>true,
+             'required' => true,
              'query_builder' => function(EntityRepository $er){
              return $er->createQueryBuilder('p')
                      ->where('p.disponible = 1');
